@@ -404,12 +404,7 @@
 
 </style>
 <body id="body">
-    <div id="talca"><p id="p1">KEFIR</p><button id="b1" onclick="fold()">Főoldal</button><button id="b2" onclick="tarca()">Tárca</button><button id="b3" onclick="piac()">Piac</button><button id="b4" onclick="tozsde()">Tőzsde</button></div>
-    <p id="p2">Miért a KEFIR?</p>
-    <p id="p26">A KEFIR egy online fizetési, kereskedési és befektetési platform, ahol könnyedén végezhetsz tranzakciókat, itt kitudod fizetni az adóidat, termékeket tudsz meghírdetni, és vásárolni.</p>
-    <p id="p27">Felhasználási feltételek</p>
-    <p id="p28">A KEFIR-nél minden új fiók készítése 2PP-be kerül, minden utalás(beleértve nyersanyag és pénz) után 5%-os vám költség jár, nyersanyag esetén ez a maximum ár értékével számított. Minden Eladó termék meghírdetése 5PP-be kerül, minden reklám(ezzel Ákost keressétek) 2 hétre 5PP-be kerül. A KEFIR felelősséget vállal minden az online felületre felvitt nyersanyagokért, és pénzért. Továbbá kötvények kamatjáért, és az adók befizetéséért. </p>
-
+   
 </body>
 <script>
     //document.getElementById("body").innerHTML += mailaTag("Fizetés készpénzben","pbp.kozpont24@gmail.com","KEFIR Számla","elf",15,40)
@@ -460,7 +455,7 @@
     var talca = ('<div id="talca"><p id="p1">KEFIR</p><button id="b1" onclick="fold()">Főoldal</button><button id="b2" onclick="tarca()">Tárca</button><button id="b3" onclick="shop()">Piac</button><button id="b4" onclick="tozsde()">Tőzsde</button></div>')
     var d = ('<div id="d"></div>')
     function fold() {
-        var fop = ('<p id="p2">Miért a KEFIR?</p>')
+        var fop = ('<p id="p2">Miért a KEFIR?</p><p id="p26">A KEFIR egy online fizetési, kereskedési és befektetési platform, ahol könnyedén végezhetsz tranzakciókat, itt kitudod fizetni az adóidat, termékeket tudsz meghírdetni, és vásárolni.</p><p id="p27">Felhasználási feltételek</p><p id="p28">A KEFIR-nél minden új fiók készítése 2PP-be kerül, minden utalás(beleértve nyersanyag és pénz) után 5%-os vám költség jár, nyersanyag esetén ez a maximum ár értékével számított. Minden Eladó termék meghírdetése 5PP-be kerül, minden reklám(ezzel Ákost keressétek) 2 hétre 5PP-be kerül. A KEFIR felelősséget vállal minden az online felületre felvitt nyersanyagokért, és pénzért. Továbbá kötvények kamatjáért, és az adók befizetéséért. </p>')
         document.getElementById("body").innerHTML = talca+fop
     }
     function rand(x) {
