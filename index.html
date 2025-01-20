@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEFIR</title>
 </head>
 <style>
 
@@ -223,7 +224,7 @@
     background-color: rgb(53, 105, 172);
     border: 2px solid rgb(53, 105, 172);
     border-radius: 30px;}
-#b11{position: absolute;
+#b20{position: absolute;
     width: 50%;
     height: 7%;
     left: 25%;
@@ -234,7 +235,7 @@
     background-color: rgb(53, 105, 172);
     border: 2px solid rgb(53, 105, 172);
     border-radius: 30px;}
-#b12{position: absolute;
+#b11{position: absolute;
     width: 50%;
     height: 7%;
     left: 25%;
@@ -242,6 +243,17 @@
     font-size: large;
     text-align: center;
     top: 55%;
+    background-color: rgb(53, 105, 172);
+    border: 2px solid rgb(53, 105, 172);
+    border-radius: 30px;}
+#b12{position: absolute;
+    width: 50%;
+    height: 7%;
+    left: 25%;
+    color: white;
+    font-size: large;
+    text-align: center;
+    top: 65%;
     background-color: rgb(53, 105, 172);
     border: 2px solid rgb(53, 105, 172);
     border-radius: 30px;}
@@ -398,15 +410,115 @@
 #p28{position: absolute;
     font-size: larger;
     top: 43%;
-    left: 4%;
-}
+    left: 4%;}
+#a1{position: absolute;
+    width: 50%;
+    height: 7%;
+    top: 13%;
+    left: 25%;
+    border: 2px solid black;
+    border-radius: 30px;
+    text-align: center;}
+#a2{position: absolute;
+    width: 50%;
+    height: 7%;
+    top: 23%;
+    left: 25%;
+    border: 2px solid black;
+    border-radius: 30px;
+    text-align: center;}
+#a3{position: absolute;
+    width: 50%;
+    height: 7%;
+    top: 33%;
+    left: 25%;
+    border: 2px solid black;
+    border-radius: 30px;
+    text-align: center;}
+#a4{position: absolute;
+    width: 50%;
+    height: 7%;
+    top: 43%;
+    left: 25%;
+    border: 2px solid black;
+    border-radius: 30px;
+    text-align: center;}
+#a5{position: absolute;
+    width: 50%;
+    height: 7%;
+    top: 53%;
+    left: 25%;
+    border: 2px solid black;
+    border-radius: 30px;
+    text-align: center;}
+#a6{position: absolute;
+    width: 50%;
+    height: 7%;
+    top: 63%;
+    left: 25%;
+    border: 2px solid black;
+    border-radius: 30px;
+    text-align: center;}
+#a7{position: absolute;
+    width: 50%;
+    height: 7%;
+    top: 73%;
+    left: 25%;
+    border: 2px solid black;
+    border-radius: 30px;
+    text-align: center;}
+#a8{position: absolute;
+    width: 50%;
+    height: 7%;
+    top: 83%;
+    left: 25%;
+    border: 2px solid black;
+    border-radius: 30px;text-align: center;}
+#a9{position: absolute;
+    width: 50%;
+    height: 7%;
+    top: 93%;
+    left: 25%;
+    border: 2px solid black;
+    border-radius: 30px;
+    text-align: center;}
+#a10{position: absolute;
+    width: 50%;
+    height: 7%;
+    top: 103%;
+    left: 25%;
+    border: 2px solid black;
+    border-radius: 30px;
+    text-align: center;}
+#b19{position: absolute;
+    width: 50%;
+    height: 7%;
+    left: 25%;
+    color: white;
+    font-size: large;
+    text-align: center;
+    top: 113%;
+    background-color: rgb(53, 105, 172);
+    border: 2px solid rgb(53, 105, 172);
+    border-radius: 30px;}
 
 </style>
 <body id="body">
-   
+    
+   <input type="number" id="a1" placeholder="Pénz">
+   <input type="number" id="a2" placeholder="Szőlő">
+   <input type="number" id="a3" placeholder="Cukor">
+   <input type="number" id="a4" placeholder="Fa">
+   <input type="number" id="a5" placeholder="Arany">
+   <input type="number" id="a6" placeholder="Búza">
+   <input type="number" id="a7" placeholder="Kukorica">
+   <input type="number" id="a8" placeholder="Állat">
+   <input type="number" id="a9" placeholder="Szén">
+   <input type="number" id="a10" placeholder="Vasérc">
+   <button id="b19" onclick="tarcaAdoad()">Továbbítás</button>
+
 </body>
 <script>
-    //document.getElementById("body").innerHTML += mailaTag("Fizetés készpénzben","pbp.kozpont24@gmail.com","KEFIR Számla","elf",15,40)
     var users = [{user: "Kaltenecker Ákos",
                 pc: 31,
                 pass: "zyj2996",
@@ -482,11 +594,11 @@
                     afa: "0.02",
                     ossz: "0.2",
                     fogado: "KEFIR",
-                    state: false},],[],[],[],[],]
+                    state: false},]]
     var piac = [{ado: "Kaltenecker Ákos",
                 mat: "arany",
-                num: "1",
-                price: "3",
+                num: "5",
+                price: "20",
                 text: "Arany Máramarosból",},]
     var userIn = false
     var userIR = false
@@ -522,7 +634,7 @@
             document.getElementById("body").innerHTML = talca+t
         }
         else{
-            var d = ('<button id="b8" onclick="tarcaTranz()">Tranzakciók</button><button id="b9" onclick="tarcaSzamla()">Számla adatok</button><button id="b10" onclick="tarcaAfa()">Áfás számlák</button><button id="b11" onclick="tarcaHit()">Hitel felvétele</button><button id="b12" onclick="tarcaKotv()">Kötvény vásárlása</button>')
+            var d = ('<button id="b8" onclick="tarcaTranz()">Tranzakciók</button><button id="b9" onclick="tarcaSzamla()">Számla adatok</button><button id="b10" onclick="tarcaAfa()">Áfás számlák</button><button id="b20" onclick="tarcaAdo()">Adó bevallása</button><button id="b11" onclick="tarcaHit()">Hitel felvétele</button><button id="b12" onclick="tarcaKotv()">Kötvény vásárlása</button>')
             document.getElementById("body").innerHTML = talca+d
         }
         
@@ -617,6 +729,71 @@
     }
     function tarcaKotv() {alert("Fejlesztés alatt!")
     }
+    function tarcaAdo() {
+        var xy = ('<input type="number" id="a1" placeholder="Pénz"><input type="number" id="a2" placeholder="Szőlő"><input type="number" id="a3" placeholder="Cukor"><input type="number" id="a4" placeholder="Fa"><input type="number" id="a5" placeholder="Arany"><input type="number" id="a6" placeholder="Búza"><input type="number" id="a7" placeholder="Kukorica"><input type="number" id="a8" placeholder="Állat"><input type="number" id="a9" placeholder="Szén"><input type="number" id="a10" placeholder="Vasérc"><button id="b19" onclick="tarcaAdoad()">Továbbítás</button>')
+        document.getElementById("body").innerHTML = talca+xy
+    }
+    function tarcaAdoad() {
+        const today = new Date();
+        
+        // A hét napja (0 = vasárnap, 1 = hétfő, ..., 6 = szombat)
+        const dayOfWeek = today.getDay();
+        
+        // Ellenőrizzük, hogy ma hétfő (1) vagy szerda (3) van-e
+        if (dayOfWeek === 1 || dayOfWeek === 2 || dayOfWeek === 3) {
+            // Megnézzük, hogy az aktuális hét a második hét-e
+            const firstDayOfYear = new Date(today.getFullYear(), 0, 1);
+            const firstMonday = new Date(firstDayOfYear.setDate(firstDayOfYear.getDate() + (1 - firstDayOfYear.getDay() + 7) % 7));
+            
+            // Az aktuális hét számítása
+            const currentWeekNumber = Math.ceil(((today - firstMonday) / (1000 * 3600 * 24) + 1) / 7);
+            
+            // Ha a jelenlegi hét szám paros (2., 4., 6., ...), akkor futtassuk a kívánt funkciót
+            if (currentWeekNumber % 2 === 0) {
+                console.log("A mai nap a második hét hétfője vagy szerdája, végrehajtjuk a műveletet.");
+                // Itt hívhatod meg a kívánt függvényt
+                // Például:
+                // yourFunction();
+                addd()
+            } else {
+                alert("Ezen a héten nincs adó bevallás.");
+            }
+        } else {
+            alert("Az adó bevallási idő intervallumon kívül vagy.");
+        }
+    }
+    function addd() {
+        var penz = document.getElementById("a1").value
+        var szolo = document.getElementById("a2").value
+        var cukor = document.getElementById("a3").value
+        var fa = document.getElementById("a4").value
+        var arany = document.getElementById("a5").value
+        var buza = document.getElementById("a6").value
+        var kukorica = document.getElementById("a7").value
+        var allat = document.getElementById("a8").value
+        var szen = document.getElementById("a9").value
+        var vaserc = document.getElementById("a10").value
+
+        var o 
+        o+=penz
+        o+=szolo*2
+        o+=cukor*1.7
+        o+=fa*1.8
+        o+=arany*3.2
+        o+=buza*1.3
+        o+=kukorica*1.5
+        o+=allat*1.5
+        o+=szen*2.1
+        o+=vaserc*2.5
+        
+        var sz = o*0.1
+        var tb = o*0.03
+        var z = o*0.13
+        alert("Sikeres adó bevallás!")
+        tarca()
+        sendEmail("pbp.kozpont24@gmail.com","KEFIR Adó bevallás",user.us+" sikeres adó bevallást hajtott végre szja: "+sz+" tb: "+tb+" ossz: "+7)
+    }
+
     function tarcaFlet() {
         var tb = ('<p id="p5">Felhasználónév</p><input type="text" id="i3"><p id="p6">Jelszó (csak kisbetű és szám)</p><input type="password" id="i4"><p id="p7">Jelszó megerősítése</p><input type="password" id="i5"><p id="p8">Email cím</p><input type="email" id="i6"><p id="p9">Email cím megerősítése</p><input type="email" id="i7"><p id="p10">Adó értesítések engedélyezése (kötelező):</p><input type="checkbox" id="i8"><p id="p11">Felhasználási feltételeket elolvastam és elfogadom (főoldal):</p><input type="checkbox" id="i9"><button id="b7" onclick="tarcaFletLet()">Létrehozás</button>')
         document.getElementById("body").innerHTML = talca+tb
