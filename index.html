@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -601,7 +602,7 @@
                 buza: 8,
                 kukorica: 0,
                 allat: 0,
-                szen: 012,
+                szen: 12,
                 vaserc: 8,},
                 {user: "KOFC",
                 pc: 71,
@@ -617,17 +618,17 @@
                 allat: 0,
                 szen: 0,
                 vaserc: 0,}]
-    var szamlak = [[{targy: "Számla létrehozása",
+    var szamlak = [[/*akos*/{targy: "Számla létrehozása",
                     ar: "0.2",
                     afa: "0.02",
                     ossz: "0.2",
                     fogado: "KEFIR",
-                    state: false},],[],[],[],[],[{targy: "Adó(termlet érték(ar) 10%-a+terület adó+kersekedés 2Pb, gyár 2*2 hét 8pp",
+                    state: false},],[/*barna*/],[/*zalán*/],[/*Zente*/],[/*Kolos*/],[{targy: "Adó(termlet érték(ar) 10%-a+terület adó+kersekedés 2Pb, gyár 2*2 hét 8pp",
                     ar: "6.2PB/ hét",
                     afa: "0.02",
                     ossz: "30.4PB",
                     fogado: "KEFIR",
-                    state: false},]]
+                    state: false},],[/*Kofc*/]]
     var piac = [{ado: "Kaltenecker Ákos",
                 mat: "arany",
                 num: "5",
@@ -636,6 +637,7 @@
     var userIn = false
     var userIR = false
     var un
+    var usernum
     var user = {
         u:"",
         p:"",
@@ -739,17 +741,21 @@
     }
     function tarcaAfa() {
         if(!userIR) {
-            var i = 0
+            /*var i = 0
             while(user.us != users[i].user && i<users.length) {
                 if(i-1<users.length)  {i++}
-            }
+            }*/
+            /*for(k=0;user.us != users[k].user && k < users.length-1;k++) {
+                
+            }*/
+            var i =usernum
             var x
             var t
             for(j = 0; j < szamlak[i].length; j++) {
                 var a = 43*j+15
                 var b= 43*j+22
                 var c = 43*j+29
-                x = ('<p style="position: absolute;left: 35%;top: '+a+'%">Számla tárgya: '+szamlak[i][j].targy+'</p><p style="position: absolute;left: 50%;top: '+a+'%">Fogadó: '+szamlak[i][j].fogado+'</p><p style="position: absolute;left: 35%;top: '+b+'%">Fizetendő: '+szamlak[i][j].ar+'</p><p style="position: absolute;left: 50%;top: '+b+'%">Áfa: '+szamlak[i][j].afa+'</p><p style="position: absolute;left: 35%;top: '+c+'%">Végösszeg: '+szamlak[i][j].ossz+'</p>'+mailaTag("Fizetés készpénzben","pbp.kozpont24@gmail.com","KEFIR Számla",user.us+" Készpénzben fizeti a számlát        "+szamlak[i][j].targy+" "+szamlak[i][j].ossz+" "+i+" "+j,j*43+36,35)+mailaTag("Fizetés online","pbp.kozpont24@gmail.com","KEFIR Számla",user.us+" Online fizeti a számlát        "+szamlak[i][j].targy+" "+szamlak[i][j].ossz+" "+i+" "+j,(j*43)+36,50))
+                x = ('<p style="position: absolute;left: 35%;top: '+a+'%">Számla tárgya: '+szamlak[i][j].targy+'</p><p style="position: absolute;left: 50%;top: '+c+'%">Fogadó: '+szamlak[i][j].fogado+'</p><p style="position: absolute;left: 35%;top: '+b+'%">Fizetendő: '+szamlak[i][j].ar+'</p><p style="position: absolute;left: 50%;top: '+b+'%">Áfa: '+szamlak[i][j].afa+'</p><p style="position: absolute;left: 35%;top: '+c+'%">Végösszeg: '+szamlak[i][j].ossz+'</p>'+mailaTag("Fizetés készpénzben","pbp.kozpont24@gmail.com","KEFIR Számla",user.us+" Készpénzben fizeti a számlát        "+szamlak[i][j].targy+" "+szamlak[i][j].ossz+" "+i+" "+j,j*43+36,35)+mailaTag("Fizetés online","pbp.kozpont24@gmail.com","KEFIR Számla",user.us+" Online fizeti a számlát        "+szamlak[i][j].targy+" "+szamlak[i][j].ossz+" "+i+" "+j,(j*43)+36,50))
                 t+=x
                 console.log(x)
                 console.log(j)  
@@ -757,6 +763,7 @@
             document.getElementById("body").innerHTML = talca+t
 
         }
+        else{alert("A bejelentkezési mód miatt nem lehet ilyen adatokhoz hozzáférni!")}
     }
     function tarcaHit() {alert("Fejlesztés alatt!")
     }
@@ -876,6 +883,7 @@
             user.pc = epp
             user.money = 0
             users.push(a)
+            usernum = users.length-1
             alert("Fiók sikeresen létrehozva!")
             userIn = true
             sendEmail("pbp.kozpont24@gmail.com","KEFIR Fiók létrehozása","Sikeres fiókkészítést hajtott végre:"+a.user+" "+a.pc+" "+a.pass+" "+a.mail)
@@ -906,8 +914,9 @@
                 user.szen = users[i].szen
                 user.vaserc = users[i].vaserc
                 userIn = true
-                alert("Sikeres bejelentkezés!")
+                usernum = i
                 sendEmail("pbp.kozpont24@gmail.com","KEFIR Bejelentkezés","Sikeres bejelentkezést hajtott végre:"+user.u+" "+user.p+" "+user.pc)
+                alert("Sikeres bejelentkezés!")
                 tarca()
             }
             else{alert("Hibás jelszó!")}
